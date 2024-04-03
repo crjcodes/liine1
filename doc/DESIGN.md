@@ -8,13 +8,15 @@ Initial POC, and, if time, follow-on versions
 
 #### POC/MVP/V0.1
 
-**Use Case**: What restaurants are open at this time?
-**SLA/KPI**:  N/A
-**Auth**: N/A
-**CI-CD**: N/A
-**Deploy Constraints**: Deployed locally only
-**Host**: "https://localhost:{TBD}"
-**GET Endpoint**: "/restaurant/open/{datetime}"
+|  |  |
+| --- | --- |
+| **Use Case** |  What restaurants are open at this time? |
+| **SLA/KPI** |  N/A |
+| **Auth** |  N/A |
+| **CI-CD** |  N/A |
+| **Deploy Constraints** |  Deployed locally only |
+| **Host** | `https://localhost:{TBD}` |
+| **GET Endpoint** | `/restaurant/open/{datetime}` |
 
 #### V0.2
 
@@ -22,13 +24,15 @@ Containerize the above via Docker
 
 #### V1.0
 
-**Use Case**: What restaurants are open at this time?
-**SLA/KPI**:  N/A
-**Auth**: N/A
-**CI-CD**: GitHub Actions
-**Deploy Constraints**: None
-**Host**: "https://www.codeonward.com"
-**GET Endpoint**: "/restaurant/open/{datetime}"
+|  |  |
+| --- | --- |
+| **Use Case** |  What restaurants are open at this time? |
+| **SLA/KPI** |  N/A |
+| **Auth** |  N/A |
+| **CI-CD** |  GitHub Actions |
+| **Deploy Constraints** |  None |
+| **Host** | `https://www.codeonward.com` |
+| **GET Endpoint** | `/restaurant/open/{datetime}` |
 
 ### Technical Requirements
 
