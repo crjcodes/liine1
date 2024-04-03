@@ -1,12 +1,5 @@
-#class OperatingHours:
-  # """
-  # Represents the internal data model
-  
-  # ...
-  # Attributes
-  # ----------
-  # day_of_week : str
-  #   in three-letter abbreviations, e.g. "Mon"
-  # start_time : time
-  # end_time : time
-  # """
+class OperatingHours:
+  def __init__(self, dow, start, end):
+      self.day_of_week = dow
+      self.start = start
+      self.end = end

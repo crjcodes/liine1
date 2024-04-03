@@ -1,3 +1,4 @@
+import string
 import converter_engine
 import operating_hours_accessor
 
@@ -11,7 +12,20 @@ class Manager:
     return "TODO"
 
   def ingest_new_data_source(self, filename):
-    # validation: just inside manager; no need for separate validation engine
+    if filename == "":
+      raise ValueError()
+
+    file = open(filename, "r")
+
+    for line in file:
+      field_values = string.split(',')
+      # TODO: validation of incoming data here
+
+      #fop = FacilityOpHours(field_values[0], )
+
     Converted = converter_engine.ConvertFrom(filename)
-    Success = self.Accessor.store(Converted)
-    return 
+    self.Accessor.store(Converted)
+    return
+  
+  def parse_dow_start_end(self, line):
+    return

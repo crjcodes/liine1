@@ -19,12 +19,12 @@ class Accessor:
   def __init__(self, records=None):
     self.jsonRecords = records
 
-  def includes(datetime):
+  def includes(self, datetime):
     """
     Returns a list of operating hours filtered by the given date time
     """
     return None
   
-  def store(jsonRecords):
+  def store(self, jsonRecords):
     # TODO: save into member variable in class
     return False
