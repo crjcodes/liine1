@@ -58,6 +58,16 @@ Containerize the above via Docker
 
 ## Architecture/Design/Approach
 
+This example solution is using, loosely, the IDesign software methodology.  For more information, see _Righting Software_.
+
+The api router is very thin, and routes to the IDesign managers directly.  Managers only communicate with engines and accessors.  Managers can talk with other managers, but engines and accessors do not talk to other engines.
+
+TODO: update the following with a diagram specific to this solution
+
+One example of IDesign:
+
+![IDesign Example](image.png)
+
 ### Volatility
 
 The main area of volatility is in the data: the hours a particular restaurant is open.

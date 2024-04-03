@@ -6,18 +6,12 @@ from operating_hours_manager import *
 
 app = Flask(__name__)
 
+@app.route("/")
 @app.route('/restaurants/open')
 
 def handle_restaurants_open():
 
   return list_operating_restaurants()
-
-
-@app.route("/")
-
-def hello_world():
-
-  return "Hello, World!"
 
 # TODO: route to a HoursOfOperationManager.ListOpenRestaurants({datetime})
 #@app.route("/restaurant/open/<datetime>")
