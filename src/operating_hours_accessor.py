@@ -1,4 +1,4 @@
-class OperatingHoursAccessor:
+class Accessor:
   """
   Represents the class that talks to our data.
   In this case, just a large json string, but in real-life situations, 
@@ -14,8 +14,10 @@ class OperatingHoursAccessor:
   includes(datetime=None)
     Returns a list of operating hours filtered by the given date time
   """
+  jsonRecords = ""
+
   def __init__(self, records=None):
-    self.records = records
+    self.jsonRecords = records
 
   def includes(datetime):
     """
@@ -23,5 +25,6 @@ class OperatingHoursAccessor:
     """
     return None
   
-  def addConvertedData(listOfRecords):
-    return None
+  def store(jsonRecords):
+    # TODO: save into member variable in class
+    return False
