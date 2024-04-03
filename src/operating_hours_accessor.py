@@ -22,3 +22,6 @@ class OperatingHoursAccessor:
     Returns a list of operating hours filtered by the given date time
     """
     return None
+  
+  def addConvertedData(listOfRecords):
+    return None
