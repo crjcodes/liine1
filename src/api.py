@@ -9,16 +9,11 @@ app = Flask(__name__)
 @app.route("/")
 @app.route('/restaurants/open')
 
+# TODO: route to a HoursOfOperationManager.ListOpenRestaurants({datetime})
+
 def handle_restaurants_open():
 
   return list_operating_restaurants()
 
-# TODO: route to a HoursOfOperationManager.ListOpenRestaurants({datetime})
-#@app.route("/restaurant/open/<datetime>")
-# @app.route('/a')
-# def list_open_restaurants():
-#   return "TODO"
-
 if __name__ == "__main__":
   app.run(debug=True)
-

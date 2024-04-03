@@ -1,4 +1,4 @@
-class OperatingHours:
+#class OperatingHours:
   """
   Represents the internal data model
   
