@@ -7,7 +7,8 @@ try:
   manager = operating_hours_manager.Manager()
 
   # TODO: FUTURE: name of file input through command-line and configuration
-  manager.ingest_new_data_source("..\\data\\restaurants.csv")
+  # TODO: figure out how to reference the file in a data directory, not just source
+  manager.ingest_new_data_source("restaurants.csv")
 except Exception as err:
     print(f"Startup failure due to unexpected {err=}, {type(err)=}")
     raise

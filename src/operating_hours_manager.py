@@ -12,17 +12,6 @@ class Manager:
     return "TODO"
 
   def ingest_new_data_source(self, filename):
-    if filename == "":
-      raise ValueError()
-
-    file = open(filename, "r")
-
-    for line in file:
-      field_values = string.split(',')
-      # TODO: validation of incoming data here
-
-      #fop = FacilityOpHours(field_values[0], )
-
     Converted = converter_engine.ConvertFrom(filename)
     self.Accessor.store(Converted)
     return
