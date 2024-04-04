@@ -1,17 +1,11 @@
 from flask import Flask
+import api_startup
 import operating_hours_manager
 
 # STARTUP
 
-try:
-  manager = operating_hours_manager.Manager()
-
-  # TODO: FUTURE: name of file input through command-line and configuration
-  # TODO: figure out how to reference the file in a data directory, not just source
-  manager.ingest_new_data_source("restaurants.csv")
-except Exception as err:
-    print(f"Startup failure due to unexpected {err=}, {type(err)=}")
-    raise
+manager = operating_hours_manager.Manager()
+api_startup.perform_startup_steps(manager)
 
 # ROUTE SETUP
 

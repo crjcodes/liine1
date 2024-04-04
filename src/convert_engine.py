@@ -1,6 +1,7 @@
 import string
 import datetime
 import re
+import json
 from operating_hours import OperatingHours
 
 def ConvertFrom(filename):
@@ -22,7 +23,7 @@ def ConvertFrom(filename):
   for line in file:
     internal_data.append(map_line_to_model(line))
 
-  return internal_data
+  return json.dumps(internal_data)
 
 def map_line_to_model(line):
   """

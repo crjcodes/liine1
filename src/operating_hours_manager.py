@@ -12,6 +12,13 @@ class Manager:
     return "TODO"
 
   def ingest_new_data_source(self, filename):
+    """
+    This approach will NOT work for larger input
+    One alternative approach is to have a background or separate
+    process ingest the csv in chunks at a time and store in a database
+    Then, here, the accessor could access the database instead of 
+    an internal json structure held in memory
+    """
     Converted = convert_engine.ConvertFrom(filename)
     self.Accessor.store(Converted)
     return

@@ -11,20 +11,19 @@ class Accessor:
     represents the internal model of the data
 
   Methods
-  includes(datetime=None)
+  what_is_open(datetime=None)
     Returns a list of operating hours filtered by the given date time
   """
-  jsonRecords = ""
+  dataSourceAsJson = None
 
   def __init__(self, records=None):
     self.jsonRecords = records
 
-  def includes(self, datetime):
+  def what_is_open(self, datetime):
     """
     Returns a list of operating hours filtered by the given date time
     """
     return None
   
   def store(self, jsonRecords):
-    # TODO: save into member variable in class
-    return False
+    self.dataSourceAsJson = jsonRecords
