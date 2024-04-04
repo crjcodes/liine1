@@ -1,4 +1,9 @@
-**/__pycache__/
+src/__pycache__/
+test/__pycache__
+test/__pycache__/**
+test/__pycache__/**/*
+
+
 **/Lib/*
 **/Scripts/*
 *.code-workspace

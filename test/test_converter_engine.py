@@ -36,7 +36,7 @@ class ConvertTests(unittest.TestCase):
   def test_validate_incoming_data_ShouldReturnTrue_WhenValid(self):
      testFieldValues = ["Superb Thai", "Mon-Sun 11:00 am - 10 pm\n"]
      result = convert_engine.validate_incoming_data(testFieldValues)
-     self.assertFalse(result)
+     self.assertTrue(result)
      
 #endregion
 
