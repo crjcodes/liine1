@@ -5,6 +5,40 @@ import unittest
 import convert_engine
 
 class ConvertTests(unittest.TestCase):
+#region validate_incoming_data
+  def test_map_line_to_model_ShouldRaiseException_WhenInvalidLine(self):
+     self.assertRaises(ValueError, convert_engine.map_line_to_model, 1)
+     self.assertRaises(ValueError, convert_engine.map_line_to_model, None)
+     self.assertRaises(ValueError, convert_engine.map_line_to_model, "")
+
+
+
+#endregion
+
+#region validate_incoming_data
+  def test_validate_incoming_data_ShouldReturnFalse_WhenInvalid(self):
+     testFieldValues = None
+     result = convert_engine.validate_incoming_data(testFieldValues)
+     self.assertFalse(result)
+
+     testFieldValues = []
+     result = convert_engine.validate_incoming_data(testFieldValues)
+     self.assertFalse(result)
+
+     testFieldValues = 1
+     result = convert_engine.validate_incoming_data(testFieldValues)
+     self.assertFalse(result)
+
+     testFieldValues = ["Superb Thai", "Mon-Sun 11:00 am - 10 pm\n", "Too many"]
+     result = convert_engine.validate_incoming_data(testFieldValues)
+     self.assertFalse(result)
+
+  def test_validate_incoming_data_ShouldReturnTrue_WhenValid(self):
+     testFieldValues = ["Superb Thai", "Mon-Sun 11:00 am - 10 pm\n"]
+     result = convert_engine.validate_incoming_data(testFieldValues)
+     self.assertFalse(result)
+     
+#endregion
 
 #region parse_last_time_text
   

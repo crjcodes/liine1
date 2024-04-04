@@ -18,12 +18,31 @@ def ConvertFrom(filename):
   # Assuming always a header
   next(file)
 
+  internal_data = []
   for line in file:
-    result = MapLineToModel(line)
+    internal_data.append(map_line_to_model(line))
+
+  return internal_data
+
+def map_line_to_model(line):
+  """
+  Will return the sub-json to add to our data "store"
+  """
+  if not line or not isinstance(line, str) or line == "":
+    raise ValueError() 
+
+  line = line.strip()
+  field_values = line.split(',')
+
+  if not validate_incoming_data(field_values):
+    raise ValueError()     
+  
+  restaurant_name = field_values[0]
+  opHours = parse_op_hours(field_values[1])
 
   return ""
 
-def ValidateRestaurantData(field_values):
+def validate_incoming_data(field_values):
   if field_values == None:
     print("No data found in this line")
     return False
@@ -38,23 +57,6 @@ def ValidateRestaurantData(field_values):
     return False
  
   return True
-
-def MapLineToModel(line):
-  """
-  Will return the sub-json to add to our data "store"
-  """
-  print(f"line is [{line}]")
-
-  line = line.strip()
-  field_values = line.split(',')
-
-  if not ValidateRestaurantData(field_values):
-    raise ValueError()     
-  
-  restaurant_name = field_values[0]
-  opHours = parse_op_hours(field_values[1])
-
-  return
 
 
 def parse_op_hours(human_readable_op_hours):
